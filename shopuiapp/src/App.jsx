@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/header/navbars/navbar'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Shop from './pages/shop'
+import ShopCategory from './pages/shopcategory'
+import Products from './pages/products'
+import Cart from './pages/cart'
+import Login from './pages/login'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+       <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Shop/>}></Route>
+          <Route path='/men' element={<ShopCategory category="men"/>}></Route>
+          <Route path='/women' element={<ShopCategory category="women"/>}></Route>
+          <Route path='/kids' element={<ShopCategory category="kids"/>}></Route>
+          <Route path='/product' element={<Products/>}>
+              <Route path=':productId' element={<Products/>}></Route>
+          </Route>
+          <Route path='/cart' element={<Cart/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+        </Routes>
+       </BrowserRouter>   
+      
+      <h1>Welcome to first e-commerce app</h1>
+    </div>
   )
 }
-
 export default App
