@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './navbar.css'
-import logo from '../../../assets/navbar/shoplog.png'
+//import logo from '../../../assets/navbar/shoplog.png'
 import carticon from '../../../assets/navbar/cart.jpg'
 import { Link } from 'react-router-dom'
-
+import ShopbagIcon from '../../../assets/page/footer/shopbag_icon.png'
 const Navbar = () => {
      const [navMenu, setNavMenu]=useState("home");
 
@@ -11,7 +11,8 @@ const Navbar = () => {
     <div>
         <div className='nav-bar'>
             <div className='nav-bar-logo'>
-                <img src={logo} alt="logo" width="90px" height="80px" />                
+                    <img src={ShopbagIcon} alt='' width='60px' height='60px'/>
+                    <p>SHOPPER</p>             
             </div>
             <div className='nav-bar-menu-container'>
                 <ul className='nav-bar-menu'>

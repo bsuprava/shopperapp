@@ -6,11 +6,11 @@
     align-items: center;
     justify-content: center;
     width: 85%;
-    height: 100vh;
+    height: 500px;
     margin: auto;
     padding: 0px 100px;
     margin-bottom: 150px;
-    background: white;
+    background: rgb(243, 223, 187);
     background: linear-gradient(180deg #e3c4e5 2% #e1ffea22 60%);
 }
 .newsletter-container h1{

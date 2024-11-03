@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     
         <div className='hero-img-container'>
-            <img alt="shop" src={ShopBanner7} width="100%" height="350px"/>
+            <img alt="shop" src={ShopBanner7} width="100%" height="400px"/>
             <div className='hero-img-text-overlay'>
                 <div className='hero-img-text-display'>
                     <p>NEW</p>
