@@ -13,6 +13,11 @@
     padding-left: 0px;
 
 }
+.nav-bar-logo p{
+    color: rgb(178, 125, 18);
+    font-size: 20px;
+    font-weight: 800;
+}
 .nav-bar-menu
 {
     display: flex;
