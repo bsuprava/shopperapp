@@ -1,3 +1,6 @@
+.shopcategory{
+    width: 100%;
+}
 .subcategory-products{
     display: flex;
     flex-direction:column;

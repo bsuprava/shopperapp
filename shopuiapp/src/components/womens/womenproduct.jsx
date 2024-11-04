@@ -1,11 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './womenproduct.css'
 import Item from '../../components/items/item'
 import { ShopContext } from '../../context/ShopContext'
+import {NavMenuContext} from '../../context/NavMenuContext'
 
 const WomenProduct = () => {
 
   const {womenProducts} = useContext(ShopContext);
+  const {setSelectedNavMenu} = useContext(NavMenuContext)
+
+   useEffect(()=>{
+    setSelectedNavMenu("women");
+   },[setSelectedNavMenu]);
 
   return(
     <div className='women'>

@@ -1,9 +1,16 @@
-import React from 'react'
+import React ,{ useContext, useEffect }from 'react'
 import './menproduct.css'
 import men_products from '../../assets/page/menproducts'
 import Item from '../items/item'
+import {NavMenuContext} from '../../context/NavMenuContext'
 
 const MenProduct = () => {
+    const {setSelectedNavMenu} = useContext(NavMenuContext);
+
+    useEffect(()=>{
+        setSelectedNavMenu("men") 
+      },[setSelectedNavMenu]);
+      
     return (
         <div className='men'>
             <h1>SHOP IN MEN</h1>
