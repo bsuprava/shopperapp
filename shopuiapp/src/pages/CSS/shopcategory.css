@@ -1,0 +1,24 @@
+.subcategory-products{
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    height: 90vh;
+    align-items: center;
+}
+.subcategory-products h1{
+    color: #171717;
+    font-size: 40px;
+    font-weight: 300;
+}
+.subcategory-products hr{
+    width: 250px;
+    height: 3px;
+    border-radius: 10px;
+    background: #252525;
+}
+.shopcategory-items{
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
