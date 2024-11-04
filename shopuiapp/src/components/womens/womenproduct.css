@@ -1,23 +1,24 @@
-.subcategory-products{
+.women{
     display: flex;
     flex-direction:column;
     gap: 10px;
     height: 90vh;
     align-items: center;
     margin-left: 10%;
-}
-.subcategory-products h1{
+   }
+.women h1{
     color: #171717;
     font-size: 40px;
     font-weight: 300;
 }
-.subcategory-products hr{
+.women hr{
     width: 250px;
     height: 3px;
     border-radius: 10px;
     background: #252525;
 }
-.shopcategory-items{
+   
+.women-items{
     margin-top: 50px;
     display: flex;
     gap: 40px;
