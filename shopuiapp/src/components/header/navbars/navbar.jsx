@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './navbar.css'
-//import logo from '../../../assets/navbar/shoplog.png'
 import carticon from '../../../assets/navbar/cart.jpg'
 import { Link } from 'react-router-dom'
 import ShopbagIcon from '../../../assets/page/footer/shopbag_icon.png'
+import { NavMenuContext } from '../../../context/NavMenuContext'
+
 const Navbar = () => {
-     const [navMenu, setNavMenu]=useState("home");
+     //const [navMenu, setNavMenu]=useState("home");
+     const {selectedNavMenu, setSelectedNavMenu} = useContext(NavMenuContext)
 
   return (
     <div>
@@ -15,11 +17,19 @@ const Navbar = () => {
                     <p>SHOPPER</p>             
             </div>
             <div className='nav-bar-menu-container'>
-                <ul className='nav-bar-menu'>
+                {/**
+                 * <ul className='nav-bar-menu'>
                     <li onClick={()=>{setNavMenu("home")}}><Link to='/' style={{textDecoration:'none'}}>Home</Link>{navMenu==="home"?<hr/>:<></>}</li>
                     <li onClick={()=>{setNavMenu("men")}}><Link to='/men' style={{textDecoration:'none'}}>Men</Link>{navMenu==="men"?<hr/>:<></>}</li>
                     <li onClick={()=>{setNavMenu("women")}}><Link to='/women' style={{textDecoration:'none'}}>Women</Link>{navMenu==="women"?<hr/>:<></>}</li>
                     <li onClick={()=>{setNavMenu("kids")}}><Link to='/kids' style={{textDecoration:'none'}}>Kids</Link>{navMenu==="kids"?<hr/>:<></>}</li>
+                </ul>
+                 */}
+                <ul className='nav-bar-menu'>
+                    <li onClick={()=>{setSelectedNavMenu("home")}}><Link to='/' style={{textDecoration:'none'}}>Home</Link>{selectedNavMenu==="home"?<hr/>:<></>}</li>
+                    <li onClick={()=>{setSelectedNavMenu("men")}}><Link to='/men' style={{textDecoration:'none'}}>Men</Link>{selectedNavMenu==="men"?<hr/>:<></>}</li>
+                    <li onClick={()=>{setSelectedNavMenu("women")}}><Link to='/women' style={{textDecoration:'none'}}>Women</Link>{selectedNavMenu==="women"?<hr/>:<></>}</li>
+                    <li onClick={()=>{setSelectedNavMenu("kids")}}><Link to='/kids' style={{textDecoration:'none'}}>Kids</Link>{selectedNavMenu==="kids"?<hr/>:<></>}</li>
                 </ul>
             </div>
             <div className='nav-bar-login-cart'>

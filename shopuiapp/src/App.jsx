@@ -14,7 +14,7 @@ import KidsBanner from './assets/page/kids/kidsbanner.png'
 function App() {
 
   return (
-    <div>
+    <div>      
        <BrowserRouter>
         <Navbar/>
         <Routes>
