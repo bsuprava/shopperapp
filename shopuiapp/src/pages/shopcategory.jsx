@@ -2,12 +2,17 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Item from '../components/items/item';
 import './CSS/shopcategory.css'
+import MenProduct from '../components/mens/menproduct';
 
 const ShopCategory = (props) => {
 const {womenProducts,kidsProducts} = useContext(ShopContext);
 
 const renderProductsByCategory = () => {
   switch (props.category) {
+
+    case 'men': 
+        return <div><MenProduct/></div>
+        break;
     case 'women':
       return <div className='subcategory-products'><h1>SHOP IN WOMEN</h1>
             <hr/><div className="shopcategory-items">{womenProducts.map((item,i)=>{
@@ -22,6 +27,7 @@ const renderProductsByCategory = () => {
       break;
     default:
       return <div></div>;
+      
   }
 }
 
