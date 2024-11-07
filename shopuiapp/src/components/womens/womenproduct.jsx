@@ -19,7 +19,7 @@ const WomenProduct = () => {
       <hr/>
       <div className="women-items">
         {womenProducts.map((item,i)=>{
-                return <Item className='shopcategory-items' key={i} id={item.id} name={item.name} image={item.img} price={item.price}/>
+                return <Item className='shopcategory-items' key={i} id={item.id} category="women" name={item.name} image={item.img} price={item.price}/>
               })
         }
       </div>

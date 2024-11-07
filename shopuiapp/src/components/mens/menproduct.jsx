@@ -17,7 +17,7 @@ const MenProduct = () => {
             <hr/>
             <div className="men-items">
                 {men_products.map((item,i)=>{
-                    return <Item key={i} id={item.id} name={item.name} image={item.img} price={item.price}/>
+                    return <Item key={i} id={item.id} category="men" name={item.name} image={item.img} price={item.price}/>
                 }
                 )}
             </div>
