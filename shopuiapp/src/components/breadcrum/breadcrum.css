@@ -1,0 +1,13 @@
+.breadcrum-container{
+    display:flex;
+    gap: 8px;
+    align-items: center;
+    color: rgb(160, 122, 122);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 50px 170px;
+    
+}
+.breadcrum-container span{
+    text-transform: capitalize;
+}

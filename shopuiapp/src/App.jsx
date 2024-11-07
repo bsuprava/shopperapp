@@ -10,6 +10,7 @@ import Footer from './components/footer/footer'
 import MenBanner from './assets/page/men/menbanner.png'
 import WomenBanner from './assets/page/women/womenbanner.png'
 import KidsBanner from './assets/page/kids/kidsbanner.png'
+import ProductDetail from './pages/productdetail'
 
 function App() {
 
@@ -22,8 +23,8 @@ function App() {
           <Route path='/men' element={<ShopCategory banner={MenBanner} category="men"/>}></Route>
           <Route path='/women' element={<ShopCategory banner={WomenBanner} category="women"/>}></Route>
           <Route path='/kids' element={<ShopCategory banner={KidsBanner} category="kids"/>}></Route>
-          <Route path='/product' element={<Products/>}>
-              <Route path=':productId' element={<Products/>}></Route>
+          <Route path='/product' element={<ProductDetail/>}>
+              <Route path=':productCategory/:productId' element={<ProductDetail/>}></Route>
           </Route>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
