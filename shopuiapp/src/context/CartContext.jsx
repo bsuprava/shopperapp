@@ -25,7 +25,11 @@ const CartContextProvider = ({children}) => {
     };
 
     const removeFromCart = (productId) => {
-        setCart(cart.filter(product => product.id !== productId));
+        console.log(productId);
+        if(cart.length>0)
+        {
+            setCart(cart.filter(product => product.id !== productId));
+        }      
     };
 
     const increaseQuantity = (productId) => {
