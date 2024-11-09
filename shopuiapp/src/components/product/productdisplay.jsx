@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import './productdisplay.css'
 import BlackStar from '../../assets/page/product/blackstar.png'
 import YellowStar from '../../assets/page/product/yellowstar.png'
+import { CartContext } from '../../context/CartContext'
 
 const ProductDisplay = (props) => {
     const {products} = props;
+    const {addToCart} = useContext(CartContext);  
+    const [btnclicks,setBtnclicks] = useState(1);
+    const addProductToCart =()=>{
+      setBtnclicks(btnclicks+1);
+      console.log(products.id+", btn click count:"+ btnclicks);
+      addToCart(products);
+    }
 
   return (
     <div className='productdisplay'>
@@ -50,7 +58,7 @@ const ProductDisplay = (props) => {
                 <div>XXL</div>
             </div>
           </div>
-          <button>ADD TO CART</button>
+          <button onClick={addProductToCart}>ADD TO CART</button>
       </div>
     </div>
   )
