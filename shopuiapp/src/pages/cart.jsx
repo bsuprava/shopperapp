@@ -1,4 +1,4 @@
-import React,{useContext, useEffect} from 'react'
+import React,{useContext, useEffect, useMemo} from 'react'
 import './CSS/cart.css'
 import CartItem from '../components/cart/cartitem'
 import {NavMenuContext} from '../context/NavMenuContext'
@@ -12,6 +12,9 @@ const Cart = () => {
   useEffect(()=>{
     setSelectedNavMenu("home") 
   },[setSelectedNavMenu]);
+
+  // Calculate subtotal using useMemo to avoid recalculating on every render 
+  const subtotal = useMemo(() => { return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0); }, [cart]);
 
   const renderCartItems = () =>{
     if(cart.length > 0)
@@ -49,7 +52,7 @@ const Cart = () => {
                 <div>
                     <div className='cartitems-total-value'>
                         <p>SubTotal</p>
-                        <p>${0}</p>
+                        <p>${subtotal}</p>
                     </div>
                     <hr/>
                     <div className='cartitems-total-value'>
@@ -59,7 +62,7 @@ const Cart = () => {
                     <hr/>
                     <div className='cartitems-total-value'>
                        <h3>Total</h3>
-                       <h3>${0}</h3>
+                       <h3>${subtotal}</h3>
                     </div>
                 </div>                
                     <button>PROCEED TO CHECK OUT</button>                
