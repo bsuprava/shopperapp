@@ -14,19 +14,10 @@ return(
       <p>{props.name}</p>
       <p>{props.price}</p>
       <div className='cartitem-quantity'>
-        <button > - </button>
+        <button onClick={() => decreaseQuantity(props.id)} > - </button>
         <span> {props.quantity} </span>
-        <button > + </button>
+        <button onClick={() => increaseQuantity(props.id)} > + </button>
       </div> 
-      {/**
-       * <div>
-        <button className='cartitem-quantity' onClick={decreaseQuantity(props.id)}>-</button>
-        <span>{props.quantity}</span>
-        <button className='cartitem-quantity' onClick={increaseQuantity(props.id)}>+</button>
-      </div> 
-      <p> <img alt='remove' src={RemoveFromCartIcon} className='cartitems-removeimg' onClick={removeFromCart(props.id)}/></p>
-       */}
-      
       <p>${props.price * props.quantity }</p>
       <p> 
         <img alt='remove' title='Remove From Cart' src={RemoveFromCartIcon} className='cartitems-removeimg' onClick={()=> removeFromCart(props.id)}/>
