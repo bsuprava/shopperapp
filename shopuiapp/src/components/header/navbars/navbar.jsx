@@ -4,10 +4,12 @@ import carticon from '../../../assets/navbar/cart.jpg'
 import { Link } from 'react-router-dom'
 import ShopbagIcon from '../../../assets/page/footer/shopbag_icon.png'
 import { NavMenuContext } from '../../../context/NavMenuContext'
+import { CartContext } from '../../../context/CartContext'
 
 const Navbar = () => {
      //const [navMenu, setNavMenu]=useState("home");
      const {selectedNavMenu, setSelectedNavMenu} = useContext(NavMenuContext)
+     const {itemCount} = useContext(CartContext);
 
   return (
     <div>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 <Link to='/cart'>
                     <img src={carticon} alt="my cart" width="50px" height="50px"/>
                 </Link>
-                <div className='nav-cart-count'>0</div>
+                <div className='nav-cart-count'>{itemCount}</div>
             </div>
 
         </div>

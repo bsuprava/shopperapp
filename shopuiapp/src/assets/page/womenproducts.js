@@ -5,25 +5,25 @@ import WomenCloth4 from './women/womencloth4.jpg';
 
 let women_products = [
     {
-        id:5,
+        id:25,
         name:"Blue Long Gown",
         img:WomenCloth1,
         price:500
     },
     {
-        id:6,
+        id:26,
         name:"Purple Long Gown",
         img:WomenCloth2,
         price:1500
     },
     {
-        id:7,
+        id:27,
         name:"White Jump Suit",
         img:WomenCloth3,
         price:500
     },
     {
-        id:8,
+        id:28,
         name:"Yellow Frock",
         img:WomenCloth4,
         price:750
